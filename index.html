@@ -2,7 +2,19 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- PWA 설정 - Safari UI 숨기기 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bike LED">
+    
+    <!-- PWA 매니페스트 -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkJpa2UgTEVEIENvbnRyb2xsZXIiLAogICJzaG9ydF9uYW1lIjogIkJpa2UgTEVEIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiM2NjdlZWEiLAogICJ0aGVtZV9jb2xvciI6ICIjNjY3ZWVhIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTWpRd0lpQm9aV2xuYUhROUlqSTBNQ0lpSUhacFpYZENiM2c5SWpBZ01DQXlOREFnTWpRd0lpQm1hV3hzUFNJalo2ZGxaU0lnZUcxc2JuTTlJbWgwZEhBNkx5OTNkM2N1ZHpNdWIzSm5Mekl3TURBdmMzWm5JajROUEdOcGNtTnNaU0JqZUQwaU1USXdJaUJqZVQwaU1USXdJaUJ5UFNJeE1EQWlJR1pwYkd3OUlpTTBRMEZHTlRBaUx6NE5QSENKMWN6NXBhSFFnZUQxOUlqRXpOQ0lpSUhrOUlqRXpOQ0lpSUhkcFpIUm9QU0kzTWlJZ2FHVnBaMmgwUFNJeU5DSWdabWxzYkQwaWQyaHBkR1VpUGcwOEwzTjJaejROIiwKICAgICAgInNpemVzIjogImFueSIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
+    
+    <!-- 아이콘 설정 -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSIjNjY3ZWVhIi8+DQo8cGF0aCBkPSJNNTQgOTBIMTI2IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPg0KPGNpcmNsZSBjeD0iNzIiIGN5PSI3MiIgcj0iMTgiIGZpbGw9IndoaXRlIi8+DQo8Y2lyY2xlIGN4PSIxMDgiIGN5PSIxMDgiIHI9IjE4IiBmaWxsPSJ3aGl0ZSIvPg0KPC9zdmc+">
+    
     <title>🚴 Bike LED BLE Controller</title>
     <style>
         body {
