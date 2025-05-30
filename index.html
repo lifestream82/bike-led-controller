@@ -316,12 +316,26 @@
                 document.getElementById('connectButton').textContent = '연결 중...';
                 document.getElementById('connectButton').disabled = true;
                 
-                // BLE 장치 선택
-                bleDevice = await navigator.bluetooth.requestDevice({
-                    filters: [{ name: 'Bike LED Controller' }],
-                    optionalServices: [SERVICE_UUID]
-                });
+                // 관대한 검색 조건으로 BLE 장치 선택
+                try {
+                    // 먼저 이름으로 검색 시도
+                    bleDevice = await navigator.bluetooth.requestDevice({
+                        filters: [
+                            { name: 'BikeLight' },
+                            { namePrefix: 'Bike' }
+                        ],
+                        optionalServices: [SERVICE_UUID]
+                    });
+                } catch (firstError) {
+                    updateDebug('이름 검색 실패, 모든 장치 검색 중...');
+                    // 이름 검색 실패시 모든 장치 검색
+                    bleDevice = await navigator.bluetooth.requestDevice({
+                        acceptAllDevices: true,
+                        optionalServices: [SERVICE_UUID]
+                    });
+                }
                 
+                updateDebug('🔗 선택된 장치: ' + bleDevice.name);
                 updateDebug('🔗 BLE 서버 연결 중...');
                 
                 // GATT 서버 연결
